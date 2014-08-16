@@ -32,6 +32,10 @@ public class Page extends PageInfo {
     String imageThumbUrl;
 
     Revision revision = null;
+    
+	// Add by Aaron.Z Start 2014.8.16
+    Extract extract = null;
+	// Add by Aaron.Z End 2014.8.16
 
     public Page() {
         super();
@@ -74,11 +78,20 @@ public class Page extends PageInfo {
 
     @Override
     public String toString() {
+     // Add by Aaron.Z Start 2014.8.16
         String content = "";
         if (revision != null) {
             content = revision.getContent();
+            return "PageID: " + pageid + "; NS: " + ns + "; Title: " + title
+                    + "; \nImage url: " + imageUrl + "\nContent:\n" + content;
         }
-        return "PageID: " + pageid + "; NS: " + ns + "; Title: " + title + "; \nImage url: " + imageUrl + "\nContent:\n" + content;
+
+        if (extract != null) {
+            content = extract.getContent();
+            return content;
+        }
+        return content;
+     // Add by Aaron.Z End 2014.8.16
     }
 
     public boolean addCategory(PageInfo arg0) {
@@ -215,11 +228,27 @@ public class Page extends PageInfo {
         this.revision = revision;
     }
 
+    // Add by Aaron.Z Start 2014.8.16
+    public Extract getCurrentExtract() {
+        return extract;
+    }
+
+    public void setCurrentExtract(Extract extract) {
+        this.extract = extract;
+    }
+
+    // Add by Aaron.Z End 2014.8.16
+    
     public String getCurrentContent() {
         String content = "";
         if (revision != null) {
             content = revision.getContent();
         }
+        // Add by Aaron.Z Start 2014.8.16
+        if (extract != null) {
+            content = extract.getContent();
+        }
+        // Add by Aaron.Z End 2014.8.16
         return content;
     }
 }

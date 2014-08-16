@@ -18,7 +18,8 @@ public class ConnectorTest {
         subject = new Connector();
         anonUser = new User(null, null, "http://zh.wikipedia.org/w/api.php");
         User result = subject.login(anonUser);
-        List<Page> pages = subject.queryContent(anonUser, Arrays.asList("人"));
+        List<Page> pages = subject.queryContent1(anonUser, Arrays.asList("人"));
+
         Page page = pages.get(0);
         System.out.println(page.toString());
 	}

@@ -36,7 +36,7 @@ import java.util.List;
  * href="http://meta.wikimedia.org/wiki/User-Agent_policy">User-Agent policy</a>
  */
 public class Connector {
-    public final static String USER_AGENT = "JavaWikipediaAPI/3.1-SNAPSHOT http://code.google.com/p/gwtwiki/";
+    public final static String USER_AGENT = "JavaWikipediaAPI/3.1-SNAPSHOT http://www.ziizle.com";
     public final static String UTF8_CHARSET = "utf-8";
 
     private final static String PARAM_LOGIN_USERNAME = "lgusername";
@@ -155,7 +155,7 @@ public class Connector {
      */
     public List<Page> queryContent1(User user, List<String> listOfTitleStrings) {
         return query(user, listOfTitleStrings,
-                "prop", "revisions", "rvprop", "content");
+                "prop", "extracts");
     }
 
     /**
@@ -325,8 +325,8 @@ public class Connector {
         }
 
         HttpPost request = new HttpPost(user.getActionUrl());
-        request.setHeader("User-Agent", USER_AGENT);
-
+        request.setHeader("User-Agent", USER_AGENT); // Aaron.Z ???
+        request.addHeader("Accept-Language", "en-US,en;q=0.8,zh-CN;q=0.6,zh;q=0.4,ja;q=0.2");
         List<NameValuePair> parameterList = new ArrayList<>();
         Collections.addAll(parameterList, parameters);
 
@@ -341,6 +341,7 @@ public class Connector {
         parameterList.add(new BasicNameValuePair(PARAM_FORMAT, FORMAT_XML));
         //request.setEntity(new UrlEncodedFormEntity(parameterList, (Charset) null));
         request.setEntity(new UrlEncodedFormEntity(parameterList, Charset.forName(UTF8_CHARSET)));
+
         return request;
     }
 

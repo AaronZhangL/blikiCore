@@ -24,8 +24,14 @@ public class XMLPagesParser extends AbstractXMLParser {
     private static final String WARNINGS = "warnings";
     private static final String MAIN = "main";
 
+    // Add by Aaron.Z Start 2014.8.16
+    private static final String EXTRACT_ID = "extract";
+    // Add by Aaron.Z End
     private Page fPage;
     private Revision fRevision;
+ // Add by Aaron.Z Start 2014.8.16
+    private Extract fExtract;
+ // Add by Aaron.Z End 2014.8.16
     private List<Page> pagesList;
     private List<String> warnings;
 
@@ -49,6 +55,9 @@ public class XMLPagesParser extends AbstractXMLParser {
             fRevision.setAnon(fAttributes.getValue(ANON_ID));
             fRevision.setTimestamp(fAttributes.getValue(TIMESTAMP_ID));
             fPage.setCurrentRevision(fRevision);
+        } else if (EXTRACT_ID.equals(qName)) { // Add by Aaron.Z 2014.8.16
+        	fExtract = new Extract();
+        	fPage.setCurrentExtract(fExtract);
         } else if (CATEGORY_ID.equals(qName)) {
             if (fPage != null) {
                 PageInfo cat = new PageInfo();
@@ -83,6 +92,10 @@ public class XMLPagesParser extends AbstractXMLParser {
                     fRevision.setContent(getString());
                 }
                 // System.out.println(getString());
+            } else if (EXTRACT_ID.equals(qName)) {
+                if (fExtract != null) {
+                    fExtract.setContent(getString());
+                }
             } else if (PAGE_TAG1.equals(qName) || PAGE_TAG2.equals(qName)) {// || CATEGORY_ID.equals(qName)) {
                 if (fPage != null) {
                     pagesList.add(fPage);
