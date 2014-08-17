@@ -23,6 +23,7 @@ public class ConnectorTest {
 
         Page page = pages.get(0);
         System.out.println("====================HTML============================");
+        System.out.println("PageID:" + page.getPageid() + "/PageTitle:"+ page.getTitle());
         System.out.println(page.toString());
         
         System.out.println("====================HTML2TEXT============================");
