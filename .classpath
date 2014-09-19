@@ -9,8 +9,19 @@
 	<classpathentry kind="lib" path="common/httpcomponents-client-4.3.5/lib/httpclient-cache-4.3.5.jar"/>
 	<classpathentry kind="lib" path="common/httpcomponents-client-4.3.5/lib/httpcore-4.3.2.jar"/>
 	<classpathentry kind="lib" path="common/httpcomponents-client-4.3.5/lib/httpmime-4.3.5.jar"/>
-	<classpathentry kind="lib" path="common/slf4j-1.7.7/slf4j-api-1.7.7.jar"/>
 	<classpathentry kind="lib" path="common/luaj-3.0/lib/luaj-jse-3.0.jar"/>
 	<classpathentry kind="lib" path="common/commons-compress-1.8.1/commons-compress-1.8.1.jar"/>
+	<classpathentry kind="lib" path="common/slf4j-1.7.7/jcl-over-slf4j-1.7.7-sources.jar"/>
+	<classpathentry kind="lib" path="common/slf4j-1.7.7/jcl-over-slf4j-1.7.7.jar"/>
+	<classpathentry kind="lib" path="common/slf4j-1.7.7/jul-to-slf4j-1.7.7-sources.jar"/>
+	<classpathentry kind="lib" path="common/slf4j-1.7.7/jul-to-slf4j-1.7.7.jar"/>
+	<classpathentry kind="lib" path="common/slf4j-1.7.7/LICENSE.txt"/>
+	<classpathentry kind="lib" path="common/slf4j-1.7.7/log4j-over-slf4j-1.7.7-sources.jar"/>
+	<classpathentry kind="lib" path="common/slf4j-1.7.7/log4j-over-slf4j-1.7.7.jar"/>
+	<classpathentry kind="lib" path="common/slf4j-1.7.7/osgi-over-slf4j-1.7.7-sources.jar"/>
+	<classpathentry kind="lib" path="common/slf4j-1.7.7/osgi-over-slf4j-1.7.7.jar"/>
+	<classpathentry kind="lib" path="common/slf4j-1.7.7/pom.xml"/>
+	<classpathentry kind="lib" path="common/slf4j-1.7.7/slf4j-api-1.7.7.jar"/>
+	<classpathentry kind="lib" path="common/slf4j-1.7.7/slf4j-simple-1.7.7.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
